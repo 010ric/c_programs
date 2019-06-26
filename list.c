@@ -4,9 +4,9 @@
 #include "list.h"
 
 /*
- * Initialisiert die Liste mit *first = NULL und *last = NULL
+ * Initialize the list with *first = NULL and *last = NULL
  *
- * RETURN: Pointer auf die angelegte list bzw. NULL bei Fehler
+ * RETURN: Pointer to the created list or NULL when error occured
  */
 list_t *list_init () {
     list_t *list = (list_t *) malloc(sizeof(list));
