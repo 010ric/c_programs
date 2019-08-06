@@ -7,3 +7,8 @@ Some C programs I wrote while enjoying my university course about operating syst
               input == "exit"
 
 3.) Program : LinkedList Implementation with functionality of insert, append and remove. 
+
+4.) Program : threadit.c generates multiple threads which count to a given parameter k. threadsched.c is a scheduler-simulation 
+              for different thread scheduling algorithms like RoundRobin (RR), PriorityRoundRobin (PRR) or 
+              ShortestRemainingNext (SRN)
+              
