@@ -1,11 +1,11 @@
 struct list_elem {
-    struct list_elem *next;	// Zeiger auf das naechste Element
-    char	         *data;	// Zeiger auf ein Datenobject
+    struct list_elem *next;	// pointer to the next element
+    char	         *data;	
 };
 
 typedef struct list {
-	struct list_elem *first;// erstes Element in der Liste
-	struct list_elem *last;	// letztes Element in der Liste
+	struct list_elem *first;
+	struct list_elem *last;	
 } list_t;
 
 /* function prototypes */
