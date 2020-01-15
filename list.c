@@ -18,11 +18,11 @@ list_t *list_init () {
 }
 
 /*
- * Fügt ein Element an den Anfang der Liste an.
- * Der Zeiger next des Elements wird auf den Zeiger von first der list gesetzt.
- * Wenn das Element das erste in der Liste ist, wird last von list auf dieses Element gesetzt.
+ * Insert the element to the beginning of the list.
+ * Next pointer of the element set to first element of list.
+ * If the element is the first element in the list, last pointer is pointing at it.
  *
- * RETURN: Pointer auf das eingefügte Element bzw. NULL bei Fehler
+ * RETURN: pointer to the inserted element or NULL
  */
 struct list_elem *list_insert (list_t *list, char *data) {
     struct list_elem *element = (struct list_elem *) malloc(sizeof(struct list_elem));
@@ -40,11 +40,11 @@ struct list_elem *list_insert (list_t *list, char *data) {
 }
 
 /*
- * Fügt ein Element an das Ende der Liste an.
- * Der Zeiger next des Elements wird auf NULL gesetzt.
- * Wenn das Element das erste in der Liste ist, wird first von list auf dieses Element gesetzt.
+ * Insert the element to the end of the list.
+ * Next pointer of the element set to first element of list.
+ * If the element is the first element in the list, last pointer is pointing at it.
  *
- * RETURN: Pointer auf das eingefügte Element bzw. NULL bei Fehler
+ * RETURN: pointer to the inserted element or NULL
  */
 struct list_elem *list_append (list_t *list, char *data) {
     struct list_elem *element = (struct list_elem *) malloc(sizeof(struct list_elem));
@@ -64,10 +64,8 @@ struct list_elem *list_append (list_t *list, char *data) {
 }
 
 /*
- * Entfernt das Element aus der Liste.
- * Wenn das Element das einzige in der Liste ist, wird first und last der Liste auf NULL gesetzt.
- * Wenn das Element das erste in der Liste ist, so wird dieses entfernt und first der Liste auf das nachfolgende gesetzt.
- * Ansonsten wird die Liste so lange durchgegangen, bis das Element gefunden wird.
+ * Remove the element from the list.
+ * If list is empty after removing, both first and last point to NULL.
  *
  * RETURN: 0 bei Erfolg, -1 bei Fehler
  */
@@ -100,8 +98,8 @@ int list_remove (list_t *list, struct list_elem *elem) {
 }
 
 /*
- * Leert die Liste.
- * Setzt first und last der Liste auf NULL.
+ * Empty the hole list.
+ * First and last point to NULL.
  */
 void list_finit (list_t *list) {
     struct list_elem *actual = list->first;
@@ -115,9 +113,7 @@ void list_finit (list_t *list) {
 }
 
 /*
- * Sucht in der Liste nach dem Element, das nach cmp_elem denselben Inhalt hat wie data.
  *
- * RETURN: Element, das dem gesuchten entspricht oder NULL, falls kein Treffer
  */
 struct list_elem *list_find (list_t *list, char *data, int (*cmp_elem) (const char *, const char *)) {
     struct list_elem *actual = list->first;
@@ -132,14 +128,14 @@ struct list_elem *list_find (list_t *list, char *data, int (*cmp_elem) (const ch
 }
 
 /*
- * Gibt den Inhalt des Speichers ab data bis zu einem '\0' aus.
+ * prints the data till a char '\0' gets red.
  */
 void print_string (char *data) {
     printf("%s\n", data);
 }
 
 /*
- * Gibt die Liste im geforderten Format aus. Dazu wird die Variable i als Elementnummer benutzt.
+ * formating
  */
 void list_print (list_t *list, void (*print_elem) (char *)) {
     int i = 1;
